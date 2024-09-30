@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<div class="create-blog">
+    <form action="/add" method="post">
+        <div class="create-title">
+            <input type="text" name="t" required placeholder="Give a Title....">
+        </div>
+        <div class="create-description">
+            <textarea name="b" id="b-body" required placeholder="Write your blog here..."></textarea>
+        </div>
+        <div class="buttons">
+            <input type="reset" name="reset" id="reset" value="Clear">
+            <input type="submit" name="submit" id="submit" value="Submit">
+        </div>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
