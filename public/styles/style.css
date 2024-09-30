@@ -37,3 +37,12 @@ div.nav-logo{
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+
+.blogs{
+    height: 90vh;
+    width: 1200px;
+    padding: 5% 10% 5% 10%;
+    display: flex;
+    background-color: aqua;
+    justify-content: flex-start; 
+}

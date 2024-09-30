@@ -1,21 +1,20 @@
 <%- include("partials/header.ejs") %>
-<div class="blogs">
-    <% if(locals.blogs){ %>
-        <div>
-            <a href="">
-                <% blogs.forEach((blog) =>{ %>
+    <div class="blogs">
+        <% if(locals.blogs){ %>
+            <div>
+                <% blogs.forEach((blog)=>{ %>
                     <div class="individual-blog">
-                        <h1><%= blog.title  %></h1>
-                        <p> <%= blog.description %> </p>
+                        <h1>
+                            <%= blog.title %>
+                        </h1>
+                        <p>
+                            <%= blog.description %>
+                        </p>
                     </div>
-                <% }) %> 
-            </a>
-        </div>
-    <% }  %>
-    <a href="/add"><input type="button" value="+"></a>
-</div>
+                    <% }); %>
+            </div>
+            <% } %>
+                <a href="/add"><img src="/images/plus.png" alt="add"></a>
+    </div>
 
-
-
-
-<%- include("partials/footer.ejs") %>
+    <%- include("partials/footer.ejs") %>
