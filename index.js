@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-const blog = [
-];
+    const blog = [
+    ];
 function addBlog(title,description){
     blog.push({title,description});
 }

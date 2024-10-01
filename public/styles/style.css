@@ -6,12 +6,14 @@
     margin: 0;
     font-family: Nunito-sans, sans-serif;
     box-sizing: border-box;
+    
 }
 nav{
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     padding: 0px calc((100vw-1300px)/2);
     background-color: #89CFF0;
 }
@@ -20,6 +22,7 @@ div.nav-logo{
     font-weight: 900;
     padding: 10px;
 }
+
 .nav_items ul{
     display: flex;
     list-style: none;
@@ -37,12 +40,59 @@ div.nav-logo{
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-
+.container{
+    background-color: #FAF8F5;
+    height: auto;
+}
 .blogs{
-    height: 90vh;
-    width: 1200px;
-    padding: 5% 10% 5% 10%;
+    width: auto;
+    padding: 10% 20%;
+}
+.inner{
+    width: auto;
     display: flex;
-    background-color: aqua;
-    justify-content: flex-start; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px;
+}
+
+.individual-blog{
+    width: 270px;
+    height: 200px;
+    margin: 0 10px;
+    padding: 10px;
+    position: relative;
+    background-color: #CCCCFF;
+}
+
+.heading{
+    width: 90%;
+    height: 60%;
+    
+    padding: 5px;
+}
+.explain{
+    width: 90%;
+    height: 40%;
+    padding: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #fff;
+}
+#add {
+    position: relative;
+    width: 270px;
+    height: 200px;
+    padding: 10px;
+    margin: 0 10px;
+    background-color: #FAF6;
+
+}
+#img{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
 }
