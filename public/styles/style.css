@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;1,6..12,200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 *{
     padding: 0;
@@ -33,6 +33,7 @@ div.nav-logo{
     font-size: 18px;
     color: #000;
     padding: 10px;
+    font-family: "Lora", serif;
 }
 .nav_items ul li a:hover {
     color: #fff;
@@ -42,7 +43,7 @@ div.nav-logo{
 }
 .container{
     background-color: #FAF8F5;
-    height: auto;
+    height: 100vh;
 }
 .blogs{
     width: auto;
@@ -95,4 +96,57 @@ div.nav-logo{
     position: absolute;
     top: 25%;
     left: 30%;
+}
+.no-blog{
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    display: inline-block;
+}
+.no-blog a,#submit,#reset{
+    font-family: "Lora", serif;
+    padding: 5px 20px;
+    width: 150px;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+    text-transform: capitalize;
+    text-decoration: none;
+    border-color: #3498db;
+    color: #fff;
+    box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+.no-blog a:hover{
+    box-shadow: 0 0 10px 0 #76add1 inset, 0 0 10px 4px #5ba9de;
+    color: #007ACC;
+}
+.create-blog{
+    position: relative;
+    top: 100px;
+    left: 25%;
+}
+.title-area,.description-area{
+    width: 600px;
+    height: 50px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    font-family: "Lora", serif;
+    font-size: 24px;
+}
+.description-area{
+    height: 100px;
+}
+.buttons{
+    margin: 20px;
+}
+#submit:hover,#reset:hover{
+    box-shadow: 0 0 10px  #76add1 inset, 0 0 10px 4px #5ba9de;
+    color: #007ACC;
 }

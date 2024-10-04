@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs") %>
         <div class="blogs">
-            <% if(locals.blogs){ %>
+            <% if(locals.blogs && blogs.length>0){ %>
                 <div class="inner">
                     <% blogs.forEach((blog)=>{ %>
                             <div class="individual-blog">
@@ -12,9 +12,9 @@
                                 </div>
                             </div>
                     <% }); %>
-                    <a href="/add" id="add"><img src="/images/plus.png" alt="add" id="img"></a>
                 </div>
-                <% } %>
-                
+            <% } else { %>
+                <h1 class="no-blog">Start, to Publish a Blog  <a href="/add">Publish</a></h1>
+            <% } %>
         </div>
     <%- include("partials/footer.ejs") %>
