@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<div class="content">
+    <% if (blog) { %> 
+        <h1 class="page-title"><%= blog.title %></h1>
+        <p class="page-description"><%= blog.description %></p> 
+    <% } else { %>
+        <p>Blog not found.</p>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>

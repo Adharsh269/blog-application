@@ -125,12 +125,15 @@ div.nav-logo{
     box-shadow: 0 0 10px 0 #76add1 inset, 0 0 10px 4px #5ba9de;
     color: #007ACC;
 }
-.create-blog{
+.create-blog,.content{
     position: relative;
     top: 100px;
-    left: 25%;
+    left: 20%;
 }
-.title-area,.description-area{
+.content{
+    display: inline-block;
+}
+#blog-number,.title-area,.description-area{
     width: 600px;
     height: 50px;
     padding: 10px 20px;
@@ -142,11 +145,42 @@ div.nav-logo{
 }
 .description-area{
     height: 100px;
+    font-size: medium;
 }
 .buttons{
     margin: 20px;
 }
 #submit:hover,#reset:hover{
     box-shadow: 0 0 10px  #76add1 inset, 0 0 10px 4px #5ba9de;
-    color: #007ACC;
+    color: #eeeff0;
+}
+.page-title{
+    font-family: "Lora", serif;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 5px;
+}
+.page-description{
+    font-family: "Lora", serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px;
+}
+.foot{
+    background-color: #4169E1;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.social-media{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.social-media img{
+    height: 40px;
+    width: 40px;
+    margin: 10px;
 }

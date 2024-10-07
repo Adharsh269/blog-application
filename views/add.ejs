@@ -1,6 +1,9 @@
 <%- include("partials/header.ejs") %>
 <div class="create-blog">
     <form action="/add" method="post">
+        <div class="id">
+            <input type="number" name="blodId" id="blog-number">
+        </div>
         <div class="create-title">
             <input type="text" name="t" class="title-area" required placeholder="Give a Title....">
         </div>

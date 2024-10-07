@@ -10,8 +10,8 @@ app.use(express.static("public"));
 
     const blog = [
     ];
-function addBlog(title,description){
-    blog.push({title,description});
+function addBlog(id,title,description){
+    blog.push({id,title,description});
 }
 
 app.get("/" ,(req,res) => {
@@ -23,15 +23,24 @@ app.get("/add",(req,res)=>{
     res.render("add.ejs");
 });
 app.post("/add",(req,res)=>{
+    const id=req.body.blodId;
     const h=req.body.t;
     const c=req.body.b;
     if(!h || !c){
         return res.status(400).send("something is empty.")
     }
-    addBlog(h,c);
+    addBlog(id,h,c);
     console.log(blog);
     res.redirect("/");
 })
+app.get("/blogpage/:id",(req,res) => {
+    const idNum = req.params.id;
+    const singleBlog = blog.find((b)=>b.id===idNum);
+    if(!singleBlog){
+        return res.status(404).send('Blog not found');
+    }
+    res.render("blogpage.ejs",{blog:singleBlog});
+});
 
 app.use((err, req, res, next) =>{
     console.error(err.stack);

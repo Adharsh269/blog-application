@@ -1,20 +1,21 @@
 <%- include("partials/header.ejs") %>
-        <div class="blogs">
-            <% if(locals.blogs && blogs.length>0){ %>
-                <div class="inner">
-                    <% blogs.forEach((blog)=>{ %>
-                            <div class="individual-blog">
-                                <div class="heading">
-                                    <h1><%= blog.title %></h1>
-                                </div>
-                                <div class="explain">
-                                    <p><%= blog.description %></p>
-                                </div>
-                            </div>
-                    <% }); %>
-                </div>
-            <% } else { %>
-                <h1 class="no-blog">Start, to Publish a Blog  <a href="/add">Publish</a></h1>
-            <% } %>
-        </div>
-    <%- include("partials/footer.ejs") %>
+<div class="blogs">
+  <% if(locals.blogs && blogs.length>0){ %>
+  <div class="inner">
+    <% blogs.forEach((blog)=>{ %> 
+		<% const des= blog.description.split('').slice(0,10).join(' ')+'...' %>
+    <div class="individual-blog">
+      <div class="heading">
+        <a href="/blogpage/<%= blog.id %>"><h1><%= blog.title %></h1></a>
+      </div>
+      <div class="explain">
+        <p><%= des %></p>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+  <% } else { %>
+  <h1 class="no-blog">Start, to Publish a Blog <a href="/add">Publish</a></h1>
+  <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
