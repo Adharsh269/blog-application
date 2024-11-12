@@ -9,10 +9,13 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
     const blog = [
+        {
+            id:1,
+            title:"My first Blog",
+            description:"It's okat to not to be okay."
+        },
     ];
-function addBlog(id,title,description){
-    blog.push({id,title,description});
-}
+
 
 app.get("/" ,(req,res) => {
     res.render("index.ejs",{
@@ -23,23 +26,23 @@ app.get("/add",(req,res)=>{
     res.render("add.ejs");
 });
 app.post("/add",(req,res)=>{
-    const id=req.body.blodId;
-    const h=req.body.t;
-    const c=req.body.b;
-    if(!h || !c){
-        return res.status(400).send("something is empty.")
+    const newblog = {
+        id:blog.length+1,
+        title:req.body.t,
+        description:req.body.b,
     }
-    addBlog(id,h,c);
+    blog.push(newblog)
     console.log(blog);
     res.redirect("/");
 })
 app.get("/blogpage/:id",(req,res) => {
-    const idNum = req.params.id;
-    const singleBlog = blog.find((b)=>b.id===idNum);
+    const idNum = parseInt(req.params.id);
+    const singleBlog = blog.find((b)=>b.id === idNum);
     if(!singleBlog){
         return res.status(404).send('Blog not found');
     }
     res.render("blogpage.ejs",{blog:singleBlog});
+    // res.json(singleBlog);
 });
 
 app.use((err, req, res, next) =>{
