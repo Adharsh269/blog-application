@@ -28,8 +28,8 @@ app.get("/add",(req,res)=>{
 app.post("/add",(req,res)=>{
     const newblog = {
         id:blog.length+1,
-        title:req.body.t,
-        description:req.body.b,
+        title:req.body.title,
+        description:req.body.description,
     }
     blog.push(newblog)
     console.log(blog);
@@ -37,7 +37,7 @@ app.post("/add",(req,res)=>{
 })
 app.get("/blogpage/:id",(req,res) => {
     const idNum = parseInt(req.params.id);
-    const singleBlog = blog.find((b)=>b.id === idNum);
+    const singleBlog = blog.find((b)=>b.id ===idNum);
     if(!singleBlog){
         return res.status(404).send('Blog not found');
     }
